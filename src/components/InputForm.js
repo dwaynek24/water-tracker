@@ -4,9 +4,11 @@ import Slider from "@mui/material/Slider";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+
 import { useState } from "react";
 import { Button } from "@mui/material";
+import Select from '@mui/material/Select';
+
 
 const markss = [
   {
@@ -70,9 +72,22 @@ function InputForm() {
     gallons: "",
   });
 
-  const handleChange = (event) => {
-    setUser(event.target.value);
-  };
+  // 
+    
+  // };
+  function handleChange(event) {
+    //SET STATES
+    setUser({ ...user, [event.target.name]: event.target.value });
+  }
+
+ 
+  
+  // const handleChange = (event) => {
+  //   setUser(event.target.value);
+
+
+  // };
+
   return (
     <main className="inputForm">
       <h2 className="inputForm"> Activity</h2>
@@ -83,12 +98,12 @@ function InputForm() {
             <Select
               labelId="activity"
               id="activity"
-              value={user}
+              value={user.activity}
               label="Type"
               onChange={handleChange}
             >
-              <MenuItem value={1}>Shower</MenuItem>
-              <MenuItem value={2}>Bath</MenuItem>
+              <MenuItem name="shower"  >Shower</MenuItem>
+              <MenuItem name="bath"  >Bath</MenuItem>
             </Select>
           </FormControl>
         </Box>
@@ -121,7 +136,7 @@ function InputForm() {
       <div>
         <Button
           onClick={() => {
-            alert("clicked");
+            console.log(user);
           }}
           variant="contained"
         >
