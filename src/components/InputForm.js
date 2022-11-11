@@ -10,26 +10,26 @@ import { Button } from "@mui/material";
 import Select from '@mui/material/Select';
 
 
-const markss = [
+const marks2 = [
   {
     value: 0,
     label: "0",
   },
   {
-    value: 1,
-    label: "1",
+    value: 5,
+    label: "5",
   },
   {
-    value: 2,
-    label: "2",
+    value: 10,
+    label: "10",
   },
   {
-    value: 3,
-    label: "3 ",
+    value: 15,
+    label: "15",
   },
   {
-    value: 4,
-    label: "4",
+    value: 20,
+    label: "20",
   },
 ];
 
@@ -59,9 +59,7 @@ const marks = [
 function valuetext(value) {
   return `${value}`;
 }
-function valuetext2(value) {
-  return `${value}`;
-}
+
 
 function InputForm() {
   const [user, setUser] = useState({
@@ -75,11 +73,17 @@ function InputForm() {
   // 
     
   // };
-  function handleChange(event) {
+  const handleChange = (event) => {
     //SET STATES
-    setUser({ ...user, [event.target.name]: event.target.value });
-  }
-
+    const name = event.target.name;
+    const value = event.target.value;
+      setUser((prev)=> {
+        return {...prev, [name]:value}
+      })
+  };
+const handleSubmit = ()=>{
+  console.log(user)
+}
  
   
   // const handleChange = (event) => {
@@ -92,32 +96,36 @@ function InputForm() {
     <main className="inputForm">
       <h2 className="inputForm"> Activity</h2>
       <div>
-        <Box sx={{ minWidth: 120 }}>
-          <FormControl fullWidth>
-            <InputLabel id="Type">Type</InputLabel>
-            <Select
-              labelId="activity"
-              id="activity"
-              value={user.activity}
-              label="Type"
-              onChange={handleChange}
-            >
-              <MenuItem name="shower"  >Shower</MenuItem>
-              <MenuItem name="bath"  >Bath</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
+      <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="activity">type</InputLabel>
+        <Select name="activity"
+          labelId="activity"
+          id="activity"
+          value={user.activity}
+          label="activity"
+          onChange={handleChange}
+        >
+          <MenuItem value={"bath"}>bath</MenuItem>
+          <MenuItem value={"shower"}>shower</MenuItem>
+          
+        </Select>
+      </FormControl>
+    </Box>
       </div>
       <div>
         <h2>Times per week</h2>
         <Box sx={{ width: 300 }}>
           <Slider
+          name="frequency"
             aria-label="Always visible"
             defaultValue={0}
-            getAriaValueText={valuetext2}
+            getAriaValueText={valuetext}
             step={1}
-            markss={markss}
+            max={20}
+            marks={marks2}
             valueLabelDisplay="on"
+            onChange={handleChange}
           />
         </Box>
       </div>
@@ -125,18 +133,20 @@ function InputForm() {
       <h2 className="inputForm"> Minutes</h2>
       <Box sx={{ width: 300 }}>
         <Slider
+        name="duration"
           aria-label="Always visible"
           defaultValue={0}
           getAriaValueText={valuetext}
           step={1}
           marks={marks}
           valueLabelDisplay="on"
+          onChange={handleChange}
         />
       </Box>
       <div>
         <Button
           onClick={() => {
-            console.log(user);
+            handleSubmit()
           }}
           variant="contained"
         >
