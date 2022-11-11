@@ -151,6 +151,7 @@ const handleSubmit = ()=>{
             max={20}
             marks={marks2}
             valueLabelDisplay="on"
+            color = "secondary"
             onChange={handleChange}
           />
         </Box>
@@ -166,6 +167,7 @@ const handleSubmit = ()=>{
           step={1}
           marks={marks}
           valueLabelDisplay="on"
+          color = "secondary"
           onChange={handleChange}
         />
       </Box>
@@ -191,9 +193,9 @@ const handleSubmit = ()=>{
         bottom: 5
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
+      <CartesianGrid strokeDasharray="3 3" stroke="#8884d8" />
+      <XAxis dataKey="name" stroke="#8884d8" />
+      <YAxis stroke="#8884d8"/>
       <Tooltip />
       <Legend />
       <Bar dataKey="Weekly" fill="#8884d8" />
