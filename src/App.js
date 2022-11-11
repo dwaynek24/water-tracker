@@ -11,7 +11,7 @@ function App() {
      <Header />
      <InputForm />
      
-     <Chart2 />
+     {/* <Chart2 /> */}
     </div>
   );
 }

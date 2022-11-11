@@ -8,6 +8,18 @@ import FormControl from "@mui/material/FormControl";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import Select from '@mui/material/Select';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend
+} from "recharts";
+
+
+
 
 
 const marks2 = [
@@ -69,7 +81,21 @@ function InputForm() {
     duration: "",
     gallons: "",
   });
-
+  const data = [
+    {
+      name: "average american",
+      Weekly: 100,
+      Monthly: 400,
+      
+    },
+    {
+      name: "User",
+      Weekly: user.duration * 2.5 * user.frequency,
+      Monthly:user.duration * 2.5 * user.frequency * 4,
+      
+    }
+    
+  ];
   // 
     
   // };
@@ -152,6 +178,27 @@ const handleSubmit = ()=>{
         >
           Submit
         </Button>
+      </div>
+      <div>
+      <BarChart
+      width={500}
+      height={300}
+      data={data}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="Weekly" fill="#8884d8" />
+      <Bar dataKey="Monthly" fill="#82ca9d" />
+    </BarChart>
       </div>
     </main>
   );
