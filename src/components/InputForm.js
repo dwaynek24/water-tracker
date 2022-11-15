@@ -79,9 +79,9 @@ function InputForm() {
   const data = [
     {
       name: "Average American",
-      PerShower: 25,
-      Weekly: 100,
-      Monthly: 400,
+      PerShower: 22.7,
+      Weekly: 159.25,
+      Monthly: 637,
     },
     {
       name: "Your Water Use",
@@ -101,7 +101,6 @@ function InputForm() {
 
   return (
     <main className="inputForm">
-      
       <div>
         <h2>Times per week</h2>
         <Box sx={{ width: 300 }}>
