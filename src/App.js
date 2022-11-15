@@ -1,18 +1,12 @@
-
-import './App.css';
-import Header from './components/Header';
-import InputForm from './components/InputForm'
-import ReactLogo from './logo.svg';
-
+import "./App.css";
+import Header from "./components/Header";
+import InputForm from "./components/InputForm";
 
 function App() {
   return (
     <div className="App">
-      
-     <Header />
-     <InputForm />
-     
-     
+      <Header />
+      <InputForm />
     </div>
   );
 }
