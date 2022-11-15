@@ -12,6 +12,7 @@ Description: With water log, users can input the duration and frequency of their
 
 
 
+![Screen Shot 2022-11-15 at 9 14 39 AM](https://user-images.githubusercontent.com/32526185/201986957-ba0a22af-4901-414a-8006-a6050c45f806.png)
 
 
 
