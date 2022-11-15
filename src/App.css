@@ -3,9 +3,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center ;
+  justify-content: space-between;
   
   
+}
+.userTable{
+  display: flex;
+  justify-content: center;
 }
 .inputForm{
   display: flex;
