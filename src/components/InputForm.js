@@ -101,6 +101,7 @@ function InputForm() {
 
   return (
     <main className="inputForm">
+      <h1>Shower Footprint</h1>
       <div>
         <h2>Times per week</h2>
         <Box sx={{ width: 300 }}>
