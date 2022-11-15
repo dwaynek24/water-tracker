@@ -4,9 +4,9 @@ import React from 'react';
 function Header(props) {
     
     return (
-        <div>
+        <div className="title">
             <h1>Water Log</h1>
-            <h2>The SHower Tracker</h2>
+            <h2>The Shower Tracker</h2>
          
         </div>
     );
